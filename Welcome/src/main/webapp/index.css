@@ -1,0 +1,67 @@
+@charset "EUC-KR";
+
+a { text-decoration:none; }
+ul { list-style:none;}
+.hover-2 {
+  background-image: linear-gradient(#1095c1 0 0);
+  background-size: 200% .08em; /* .08em is our fixed height, use what you want  */
+  background-position: 200% 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s, background-position .3s .3s;
+  color:black;
+}
+.hover-2:hover {
+  transition: background-size .3s .3s, background-position .3s;
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  gap: 20px;
+  place-content: center;
+  text-align:center;
+}
+h1 {
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+  margin:0;
+  cursor: pointer;
+  padding: 0 .07em;
+}
+
+.hover-3 {
+  --c: no-repeat linear-gradient(#1095c1 0 0);
+  background: 
+    var(--c)  calc(-101% + var(--p,0%)) 100% / 50.1% var(--p,.08em),
+    var(--c)  calc( 201% - var(--p,0%)) 0    / 50.1% var(--p,.08em);
+  transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+	color:black;
+}
+.hover-3:hover {
+  --p: 101%;
+  --t: 0.3s;
+  color: #fff;
+}
+
+.hover-4 {
+  --c: #1095c1;
+  line-height: 1.2em;
+  background: conic-gradient(from -135deg at 100% 50%, var(--c) 90deg, #0000 0)
+      0 var(--p, 0%),
+    conic-gradient(from -135deg at 1.2em 50%, #0000 90deg, var(--c) 0) 100%
+      var(--p, 0%);
+  background-size: var(--s, 0%) 200%;
+  background-repeat: no-repeat;
+  transition: 0.4s ease-in, background-position 0s;
+  color:black;
+}
+.hover-4:hover {
+  --p: 100%;
+  --s: calc(
+    50% + 0.61em
+  ); /* it should be 0.6em(1.2em/2) but we use a litte bigger */
+  color: #fff;
+}
