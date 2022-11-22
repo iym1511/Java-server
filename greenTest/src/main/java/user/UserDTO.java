@@ -16,4 +16,5 @@ public class UserDTO {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
+	
 }
